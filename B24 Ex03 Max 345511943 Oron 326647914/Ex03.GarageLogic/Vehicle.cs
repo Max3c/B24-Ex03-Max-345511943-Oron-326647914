@@ -7,6 +7,19 @@ using System.Threading.Tasks;
 
 namespace Ex03.GarageLogic
 {
+
+    public interface IElectricVehicle
+    {
+        float RemainingEngineTime { get; }
+        float MaxEngineTime { get; }
+        void Recharge(float hours);
+    }
+    public interface IFuelVehicle
+    {
+        FuelType FuelType { get; }
+        float RemainingFuelLiters { get; }
+        void Refuel(float i_Amount, FuelType i_FuelType);
+    }
     /// <summary>
     ///  every vehicle contains the following properties:
     ///  Model Name(String),License Number(String),Remaining Energy Percentage(Fuel/Battery) (float),Wheels, with each wheel containing the following:
@@ -18,9 +31,9 @@ namespace Ex03.GarageLogic
         private string m_LicenseNumber;
         private float m_RemainingEnergy;
         public List<Wheel> m_Wheels {  get; set; }
-        public string OwnerName { get; set; }
-        public string OwnerPhoneNumber { get; set; }
-        public VehicleStatus Status { get; set; } = VehicleStatus.InRepair;
+        public string m_OwnerName { get; set; }
+        public string m_OwnerPhoneNumber { get; set; }
+        public VehicleStatus m_Status { get; set; } = VehicleStatus.InRepair;
         public string ModelName
         {
             get { return m_ModelName; }
@@ -39,12 +52,14 @@ namespace Ex03.GarageLogic
             set { m_RemainingEnergy = value; }
         }
 
-        public Vehicle(string i_modelName, string i_licenseNumber, float i_remainingEnergy)
+        public Vehicle(string i_modelName, string i_licenseNumber, float i_remainingEnergy, string i_OwnerName, string i_OwnerPhoneNumber)
         {
             m_ModelName = i_modelName;
             m_LicenseNumber = i_licenseNumber;
             m_RemainingEnergy = i_remainingEnergy;
             m_Wheels = new List<Wheel>();
+            m_OwnerName = i_OwnerName;
+            m_OwnerPhoneNumber = i_OwnerPhoneNumber;
         }
     }
 }

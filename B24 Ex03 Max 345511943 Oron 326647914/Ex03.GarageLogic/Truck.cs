@@ -1,4 +1,4 @@
-public class Truck : Vehicle
+public class Truck : Vehicle, IFuelVehicle
 {
     private bool m_CarryingHazardousMaterials;
     private float m_CargoVolume;
@@ -10,11 +10,6 @@ public class Truck : Vehicle
         m_CarryingHazardousMaterials = carryingHazardousMaterials;
         m_CargoVolume = cargoVolume;
         m_FuelType = fuelType;
-    }
-
-    public getCurrFuel()
-    {
-        return m_RemainingEnergy;
     }
 
     public void Refuel(float i_Amount)
