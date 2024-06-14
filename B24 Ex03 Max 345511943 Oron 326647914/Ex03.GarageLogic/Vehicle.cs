@@ -18,6 +18,9 @@ namespace Ex03.GarageLogic
         private string m_LicenseNumber;
         private float m_RemainingEnergy;
         public List<Wheel> m_Wheels {  get; set; }
+        public string OwnerName { get; set; }
+        public string OwnerPhoneNumber { get; set; }
+        public VehicleStatus Status { get; set; } = VehicleStatus.InRepair;
         public string ModelName
         {
             get { return m_ModelName; }
