@@ -61,8 +61,45 @@ public class Program
 
     private static void InsertNewVehicle()
     {
-        // Implementation for inserting a new vehicle
-        
+        Console.WriteLine("Hello, please select a veichle type:");
+        Console.WriteLine("[1] Fuel Car");
+        Console.WriteLine("[2] Electric Car");
+        Console.WriteLine("[3] Fuel Motorcycle");
+        Console.WriteLine("[4] Electric Motorcycle");
+        Console.WriteLine("[5] Truck (Fuel)");
+        string option = Console.ReadLine();
+        Console.WriteLine("What is the license number of the vehicle?");
+        string licenseNumber = Console.ReadLine();
+        vehicle = garage.SearchVehicle(licenseNumber);
+        if (vehicle != null)
+        {
+            Console.WriteLine("Vehicle already in the garage. what would you like to do?");
+            return;
+        }
+        if(option == "1")
+        {
+            
+        }
+        else if(option == "2")
+        {
+            // Create a new ElectricCar
+        }
+        else if(option == "3")
+        {
+            // Create a new FuelMotorcycle
+        }
+        else if(option == "4")
+        {
+            // Create a new ElectricMotorcycle
+        }
+        else if(option == "5")
+        {
+            // Create a new Truck
+        }
+        else
+        {
+            Console.WriteLine("Invalid option, try again.");
+        }
     }
 
     private static void DisplayVehicleLicenseNumbers()

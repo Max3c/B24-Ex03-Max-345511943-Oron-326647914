@@ -9,10 +9,12 @@ public class Motorcycle : Vehicle
     {
         LicenseType = licenseType;
         EngineVolume = engineVolume;
+        wheels.add(new Wheel("Michelin", 33, 33));
+        wheels.add(new Wheel("Michelin", 33, 33));
     }
 }
 
-public class ElectricMotorcycle : Motorcycle , IElectricVeichle
+public class ElectricMotorcycle : Motorcycle , IElectricVehicle
 {
     private float m_RemainingEngineTime;
     private float m_MaxEngineTime;
@@ -20,7 +22,7 @@ public class ElectricMotorcycle : Motorcycle , IElectricVeichle
     public ElectricMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, LicenseType licenseType, int engineVolume, float remainingEngineTime, float maxEngineTime) : base(modelName, licenseNumber, remainingEnergy, wheels, licenseType, engineVolume)
     {
         m_RemainingEngineTime = remainingEngineTime;
-        m_MaxEngineTime = maxEngineTime;
+        m_MaxEngineTime = 2;
     }
 
     public void Recharge(float hours)
@@ -38,9 +40,9 @@ public class FuelMotorcycle : Motorcycle, IFuelVehicle
     private float m_RemainingFuelLiters;
     private float m_MaxAmountOfFuel;
 
-    public FuelMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, LicenseType licenseType, int engineVolume, FuelType fuelType, float remainingFuelLiters, float maxAmountOfFuel) : base(modelName, licenseNumber, remainingEnergy, wheels, licenseType, engineVolume)
+    public FuelMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, LicenseType licenseType, int engineVolume, float remainingFuelLiters) : base(modelName, licenseNumber, remainingEnergy, wheels, licenseType, engineVolume)
     {
-        m_FuelType = fuelType;
+        m_FuelType = fuelType.Octane98;
         m_RemainingFuelLiters = remainingFuelLiters;
         m_MaxAmountOfFuel = maxAmountOfFuel;
     }
