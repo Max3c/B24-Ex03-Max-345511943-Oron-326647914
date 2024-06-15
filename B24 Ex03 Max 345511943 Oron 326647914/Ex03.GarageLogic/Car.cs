@@ -4,7 +4,7 @@ public class Car : Veichle
     private int m_doors;
 
     // Constructor
-    public Car(string i_modelName, string i_licenseNumber, float i_remainingEnergy, List<Wheel> i_wheels, CarColor i_carColor, int i_numDoors) : base(modelName, licenseNumber, remainingEnergy, wheels)
+    public Car(string i_modelName, string i_licenseNumber, float i_remainingEnergy, List<Wheel> i_wheels, string i_ownerName, string i_ownerPhoneNumber, VehicleStatus vehicleStatus, CarColor i_carColor, int i_numDoors) : base(modelName, licenseNumber, remainingEnergy, wheels, ownerName, ownerPhoneNumber, vehicleStatus)
     {
         m_color = carColor;
         m_doors = numDoors;
@@ -21,7 +21,7 @@ public class ElectricCar : Car, IElectricVehicle
     private float m_RemainingEngineTime;
     private float m_MaxEngineTime;
 
-    public ElectricCar(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, CarColor carColor, int numDoors, float remainingEngineTime) : base(modelName, licenseNumber, remainingEnergy, wheels, carColor, numDoors)
+    public ElectricCar(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, string ownerName, string ownerPhoneNumber, VehicleStatus vehicleStatus, CarColor carColor, int numDoors, float remainingEngineTime) : base(modelName, licenseNumber, remainingEnergy, wheels, ownerName, ownerPhoneNumber, vehicleStatus, carColor, numDoors)
     {
         m_RemainingEngineTime = remainingEngineTime;
         m_MaxEngineTime = 3.5;
@@ -43,7 +43,7 @@ public class FuelCar : Car, IFuelVehicle
     private float m_RemainingFuelLiters;
     private float m_MaxAmountOfFuel;
 
-    public FuelCar(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, CarColor carColor, int numDoors, float remainingFuelLiters) : base(modelName, licenseNumber, remainingEnergy, wheels, carColor, numDoors)
+    public FuelCar(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, string ownerName, string ownerPhoneNumber, VehicleStatus vehicleStatus, CarColor carColor, int numDoors, float remainingFuelLiters) : base(modelName, licenseNumber, remainingEnergy, wheels, ownerName, ownerPhoneNumber, vehicleStatus, carColor, numDoors)
     {
         m_FuelType = FuelType.Octane95;
         m_RemainingFuelLiters = remainingFuelLiters;

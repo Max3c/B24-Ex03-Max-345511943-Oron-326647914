@@ -5,7 +5,7 @@ public class Truck : Vehicle, IFuelVehicle
     private FuelType m_FuelType;
     private float m_maxAmountOfFuel;
 
-    public Truck(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, bool carryingHazardousMaterials, float cargoVolume) : base(modelName, licenseNumber, remainingEnergy, wheels)
+    public Truck(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, string ownerName, string ownerPhoneNumber, VehicleStatus vehicleStatus, bool carryingHazardousMaterials, float cargoVolume) : base(modelName, licenseNumber, remainingEnergy, wheels, ownerName, ownerPhoneNumber, vehicleStatus)
     {
         m_CarryingHazardousMaterials = carryingHazardousMaterials;
         m_CargoVolume = cargoVolume;

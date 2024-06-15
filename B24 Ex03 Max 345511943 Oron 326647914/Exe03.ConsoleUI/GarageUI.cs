@@ -76,8 +76,24 @@ public class Program
             Console.WriteLine("Vehicle already in the garage. what would you like to do?");
             return;
         }
+        Console.WriteLine("What is the model name of the vehicle?");
+        string modelName = Console.ReadLine();
+        Console.WriteLine("What is the owner name of the vehicle?");
+        string ownerName = Console.ReadLine();
+        Console.WriteLine("What is the owner phone number of the vehicle?");
+        string ownerPhoneNumber = Console.ReadLine();
+        Console.WriteLine("What is the remaining energy of the vehicle?");
+        float remainingEnergy = float.Parse(Console.ReadLine());
         if(option == "1")
         {
+            // Create a new FuelCar
+            Console.WriteLine("What is the color of the car?");
+            string color = Console.ReadLine();
+            CarColor carColor = (CarColor)Enum.Parse(typeof(CarColor), color);
+            Console.WriteLine("How many doors does the car have?");
+            int doors = int.Parse(Console.ReadLine());
+            garage.add(VehicleFactory.CreateFuelCar(modelName, licenseNumber, remainingEnergy, new List<Wheel>(), ownerName, ownerPhoneNumber, VehicleStatus.InRepair, carColor, doors));
+            return;
             
         }
         else if(option == "2")

@@ -5,7 +5,7 @@ public class Motorcycle : Vehicle
     public LicenseType LicenseType { get; set; }
     public int EngineVolume { get; set; }
 
-    public Motorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, LicenseType licenseType, int engineVolume) : base(modelName, licenseNumber, remainingEnergy, wheels)
+    public Motorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, string i_ownerName, string i_ownerPhoneNumber, VehicleStatus vehicleStatus,  LicenseType licenseType, int engineVolume) : base(modelName, licenseNumber, remainingEnergy, wheels, i_ownerName, i_ownerPhoneNumber, vehicleStatus)
     {
         LicenseType = licenseType;
         EngineVolume = engineVolume;
@@ -19,7 +19,7 @@ public class ElectricMotorcycle : Motorcycle , IElectricVehicle
     private float m_RemainingEngineTime;
     private float m_MaxEngineTime;
 
-    public ElectricMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, LicenseType licenseType, int engineVolume, float remainingEngineTime, float maxEngineTime) : base(modelName, licenseNumber, remainingEnergy, wheels, licenseType, engineVolume)
+    public ElectricMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, string ownerName, string ownerPhoneNumber, VehicleStatus vehicleStatus, LicenseType licenseType, int engineVolume, float remainingEngineTime, float maxEngineTime) : base(modelName, licenseNumber, remainingEnergy, wheels, ownerName, ownerPhoneNumber, vehicleStatus, licenseType, engineVolume)
     {
         m_RemainingEngineTime = remainingEngineTime;
         m_MaxEngineTime = 2;
@@ -40,7 +40,7 @@ public class FuelMotorcycle : Motorcycle, IFuelVehicle
     private float m_RemainingFuelLiters;
     private float m_MaxAmountOfFuel;
 
-    public FuelMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, LicenseType licenseType, int engineVolume, float remainingFuelLiters) : base(modelName, licenseNumber, remainingEnergy, wheels, licenseType, engineVolume)
+    public FuelMotorcycle(string modelName, string licenseNumber, float remainingEnergy, List<Wheel> wheels, string ownerName, string ownerPhoneNumber, VehicleStatus vehicleStatus, LicenseType licenseType, int engineVolume, float remainingFuelLiters) : base(modelName, licenseNumber, remainingEnergy, wheels, ownerName, ownerPhoneNumber, vehicleStatus, licenseType, engineVolume)
     {
         m_FuelType = fuelType.Octane98;
         m_RemainingFuelLiters = remainingFuelLiters;

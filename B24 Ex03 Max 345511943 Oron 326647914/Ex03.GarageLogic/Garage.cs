@@ -23,11 +23,12 @@ namespace Ex03.GarageLogic
                 }
             }
         }
-        public void InsertVehicle(Vehicle vehicle, )
+        public void InsertVehicle(Vehicle vehicle)
         {
                
         }
 
+        
         public void RemoveVehicle(Vehicle vehicle)
         {
             vehicles.Remove(vehicle);
